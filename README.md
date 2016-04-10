@@ -1,23 +1,23 @@
-               python scripts for the visualization of stocks tick data
+# python scripts for the visualization of stocks tick data  
  
- Requires: python 2.7.10, pymongo 3.2.2, pandas 0.16.2, numpy 1.10.1
+ Requires: python 2.7.10, pymongo 3.2.2, pandas 0.16.2, numpy 1.10.1  
   
   
 ----------------------------------
-I.  overview
-II. code example
+### I.  overview  
+### II. code example  
 ----------------------------------
 
 -----------------------------------
-I overview
+#### I. overview
 ----------------------------------
   
    The visualization of stocks tick data has been enabled by these two python scripts,
 mongo_StockVisualization.py and mongoStockVisualClass0.py, where the latter 
 is a reconstruction of the former, providing a general interface to visualize 
 the order_size/volume/trading price/ for each tick shot in a certain stock 
-database based on mongoDB technique. 
-   Two classes are defined in mongoStockVisualClass0.py,
+database based on mongoDB technique.  
+   Two classes are defined in mongoStockVisualClass0.py,  
 1. class basic_visualize()
  # for a time series plot of the order_size_at_certain_price/
  volume/trading price/ etc.
@@ -27,16 +27,17 @@ database based on mongoDB technique.
 with the blue line denoting the moving average traded price of two neighbouring 
 tick shots.
 
-(to continue...)
-ps: We create the indices for the database by another python script
+(to continue...)  
+ps: We create the indices for the database by another python script  
 
 -----------------------------------
-II Code examples
+#### II. Code examples
 ----------------------------------
 
-Code examples detailing how the use of the codes:
-----------------initialize-----------------------------------------------------
-# initialize the parameters for visualization
+Code examples detailing how the use of the codes:  
+----------------initialize-----------------------------------------------------  
+#### initialize the parameters for visualization  
+```python
 width=0.1
 height= 0.05/2.5
 datex = "2013-03-18"
@@ -44,7 +45,9 @@ u0 = 600
 fsize=10
 k=10
 collection= SH600516
------Example 1-----------------------------------------------------------------
+```
+-----Example 1---------------------------------------------------------------  
+```python
 fig = plt.figure(figsize=(20, 15), dpi=240, facecolor='w', edgecolor='k')
 ax = fig.add_subplot(111, aspect='equal')
 plt.axis('off')
@@ -65,8 +68,10 @@ plt.show()
 fig.savefig(filename,format='pdf',dpi=1000)
 
 plt.close(fig)
------------------Example 2------------------------------------------------------
-#plot by the class basic_visualize()
+```
+-----------------Example 2---------------------------------------------------  
+#plot by the class basic_visualize()  
+```python
 fig1 = plt.figure(figsize=(20, 15), dpi=240, facecolor='w', edgecolor='k')
 ax1 = fig.add_subplot(111, aspect='equal')
 classBasic=basic_visualize(collection,datex,'vol')
@@ -74,6 +79,7 @@ classBasic.tick_plotS()
 plt.title('trading volume for '+str(name)+' on '+datex)
 plt.show()
 plt.close(fig)
+```
 ------------------------------------------------------------------
 
 Feedback: jiansendhu@126.com, j.zheng@uu.nl
