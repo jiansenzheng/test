@@ -19,10 +19,13 @@ the order_size/volume/trading price/ for each tick shot in a certain stock
 database based on mongoDB technique. 
    Two classes are defined in mongoStockVisualClass0.py,
 1. class basic_visualize()
- # for a time series plot of the order_size_at_certain_price/volume/trading price/ etc.
+ # for a time series plot of the order_size_at_certain_price/
+ volume/trading price/ etc.
 2. class tick_visualize()
- visualize the tick data for a certain trading day, and the order_size at color encoded, 
-with the blue line denoting the moving average traded price of two neighbouring tick shots.
+ visualize the tick data for a certain trading day, and the order_size are
+ color encoded, 
+with the blue line denoting the moving average traded price of two neighbouring 
+tick shots.
 
 (to continue...)
 ps: We create the indices for the database by another python script
@@ -55,7 +58,8 @@ for p in sqPatch:
 
 classTick.markVal_dateSP_hms(u0,k)
 classTick.priceLine_dateSP2(u0,k,'b-')
-plt.title('visualization of partial '+str(name)+' tickData on '+datex+'with u0 = '+str(u0),fontsize=18)
+plt.title('visualization of partial '+str(name)+' tickData on '+datex+'with 
+u0 = '+str(u0),fontsize=18)
 
 plt.show()
 fig.savefig(filename,format='pdf',dpi=1000)
